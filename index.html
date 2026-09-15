@@ -1,2456 +1,1568 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Kong Wei Yip · FLP Realty Sdn Bhd</title>
-
-<meta name="description" content="Kong Wei Yip, Real Estate Project Specialist at FLP Realty Sdn Bhd — turning property opportunities into smart decisions.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Italiana&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
-
-
-<style>
-
-:root{
-  --ink:#1A2027;
-  --ink-soft:#2E3742;
-  --paper:#EEF1F4;
-  --paper-deep:#E0E5EA;
-  --white:#FFFFFF;
-  --accent:#8B98A6;
-  --accent-light:#C7CFD6;
-  --accent-deep:#47535F;
-  --line:rgba(255,255,255,0.16);
-  --line-dark:rgba(26,32,39,0.14);
-
-  --font-display:"Fraunces",serif;
-  --font-body:"IBM Plex Sans",sans-serif;
-  --font-mono:"IBM Plex Mono",monospace;
-}
-
-
-/* ===== GLOBAL ===== */
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:var(--font-body);
-  background:var(--paper);
-  color:var(--ink);
-  line-height:1.55;
-  -webkit-font-smoothing:antialiased;
-}
-
-img{
-  max-width:100%;
-  display:block;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-ul{
-  list-style:none;
-}
-
-.wrap{
-  max-width:1120px;
-  margin:0 auto;
-  padding:0 28px;
-}
-
-.eyebrow{
-  font-family:var(--font-mono);
-  font-size:.72rem;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  font-weight:500;
-}
-
-
-/* ===== NAV ===== */
-
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:50;
-
-  background:rgba(26,32,39,.92);
-
-  backdrop-filter:blur(6px);
-
-  border-bottom:1px solid var(--line);
-}
-
-nav.wrap{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  height:76px;
-
-  color:var(--white);
-}
-
-.brandmark{
-  display:flex;
-  flex-direction:column;
-  line-height:1.1;
-}
-
-.brandmark .name{
-  font-family:var(--font-display);
-  font-weight:600;
-  font-size:1.15rem;
-}
-
-.brandmark .co{
-  font-family:var(--font-mono);
-  font-size:.62rem;
-  letter-spacing:.16em;
-  color:var(--accent-light);
-  margin-top:3px;
-}
-
-.nav-links{
-  display:none;
-
-  gap:26px;
-
-  font-family:var(--font-mono);
-  font-size:.76rem;
-  letter-spacing:.05em;
-
-  color:rgba(255,255,255,.75);
-}
-
-.nav-links a:hover{
-  color:var(--accent-light);
-}
-
-
-/* ===== BUTTONS ===== */
-
-.btn{
-  font-family:var(--font-mono);
-  font-size:.76rem;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-
-  padding:11px 20px;
-
-  border-radius:2px;
-
-  border:1px solid var(--accent);
-
-  color:var(--white);
-
-  transition:
-    background .2s ease,
-    color .2s ease,
-    transform .2s ease;
-
-  white-space:nowrap;
-}
-
-.btn:hover{
-  background:var(--accent);
-  color:var(--ink);
-  transform:translateY(-1px);
-}
-
-.btn.solid{
-  background:var(--accent);
-  color:var(--ink);
-}
-
-.btn.solid:hover{
-  background:var(--accent-light);
-}
-
-
-/* ===== HERO ===== */
-
-.hero{
-  position:relative;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(26,32,39,.55),
-      rgba(26,32,39,.72)
-    ),
-
-    url('images/BG.jpeg')
-    center 75% / 160% no-repeat;
-
-  color:var(--white);
-
-  padding:168px 0 100px;
-
-  overflow:hidden;
-}
-
-.blueprint-grid{
-  position:absolute;
-  inset:0;
-
-  background-image:
-    repeating-linear-gradient(
-      90deg,
-      var(--line) 0 1px,
-      transparent 1px 88px
-    ),
-
-    repeating-linear-gradient(
-      0deg,
-      var(--line) 0 1px,
-      transparent 1px 88px
-    );
-
-  opacity:.5;
-
-  mask-image:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,.9),
-      rgba(0,0,0,.15) 85%
-    );
-}
-
-.hero-grid{
-  position:relative;
-  z-index:1;
-
-  display:grid;
-
-  grid-template-columns:.7fr 1.5fr;
-
-  gap:60px;
-
-  align-items:center;
-}
-
-.hero .eyebrow{
-  color:var(--accent-light);
-  margin-bottom:22px;
-}
-
-.hero .eyebrow::before{
-  content:"— ";
-}
-
-h1{
-  font-family:var(--font-display);
-  font-weight:600;
-
-  font-size:clamp(
-    2.1rem,
-    4.6vw,
-    3.4rem
-  );
-
-  line-height:1.1;
-
-  letter-spacing:-.01em;
-}
-
-h1 em{
-  font-style:italic;
-  font-weight:500;
-  color:var(--accent-light);
-}
-
-.hero-sub{
-  margin-top:24px;
-
-  font-size:1.05rem;
-
-  max-width:520px;
-
-  color:rgba(255,255,255,.82);
-}
-
-.hero-quote{
-  margin-top:26px;
-
-  font-family:var(--font-display);
-
-  font-style:italic;
-
-  font-size:1.1rem;
-
-  color:var(--accent-light);
-
-  border-left:2px solid var(--accent);
-
-  padding-left:16px;
-
-  max-width:480px;
-}
-
-.hero-actions{
-  margin-top:36px;
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:14px;
-}
-
-.portrait{
-  aspect-ratio:4/5;
-
-  border:1px solid var(--line);
-
-  overflow:hidden;
-
-  max-width:400px;
-}
-
-@media(min-width:901px){
-
-  .portrait{
-    margin-left:-96px;
-  }
-
-}
-
-.portrait img{
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-}
-
-
-/* ===== SECTION ===== */
-
-section{
-  padding:104px 0;
-}
-
-.section-head{
-  max-width:640px;
-  margin-bottom:52px;
-}
-
-.section-head .eyebrow{
-  color:var(--accent-deep);
-  margin-bottom:14px;
-}
-
-.section-head h2{
-  font-family:var(--font-display);
-
-  font-weight:600;
-
-  font-size:clamp(
-    1.7rem,
-    3.2vw,
-    2.3rem
-  );
-
-  letter-spacing:-.01em;
-}
-
-.section-head p{
-  margin-top:14px;
-
-  color:rgba(26,32,39,.72);
-
-  font-size:1rem;
-}
-
-.reveal{
-  opacity:0;
-
-  transform:translateY(18px);
-
-  transition:
-    opacity .7s ease,
-    transform .7s ease;
-}
-
-.reveal.in-view{
-  opacity:1;
-  transform:none;
-}
-
-
-/* ===== STORY ===== */
-
-.story{
-  position:relative;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(26,32,39,.5),
-      rgba(26,32,39,.62)
-    ),
-
-    url('images/BG2.jpeg')
-    center / cover no-repeat;
-}
-
-.story .section-head p,
-.story .philosophy p{
-  color:var(--white);
-
-  text-shadow:
-    0 1px 6px rgba(0,0,0,.45);
-}
-
-.story .section-head h2,
-.story .philosophy blockquote,
-.story .philosophy .vision-text{
-  color:var(--white);
-}
-
-.philosophy{
-  max-width:700px;
-}
-
-.philosophy p{
-  font-size:1.02rem;
-
-  color:rgba(26,32,39,.78);
-
-  margin-bottom:20px;
-}
-
-.philosophy blockquote{
-  font-family:var(--font-display);
-
-  font-style:italic;
-
-  font-weight:500;
-
-  font-size:1.35rem;
-
-  line-height:1.4;
-
-  color:var(--ink);
-
-  border-left:3px solid var(--accent);
-
-  padding:4px 0 4px 24px;
-
-  margin:34px 0;
-}
-
-.philosophy .vision-label{
-  font-family:var(--font-mono);
-
-  font-size:.72rem;
-
-  letter-spacing:.18em;
-
-  text-transform:uppercase;
-
-  color:var(--accent-deep);
-
-  margin-bottom:8px;
-}
-
-.philosophy .vision-text{
-  font-family:var(--font-display);
-
-  font-weight:600;
-
-  font-size:1.15rem;
-
-  color:var(--ink);
-
-  margin-bottom:0;
-}
-
-
-/* ================================================= */
-/* ===== SERVICES ===== */
-/* ================================================= */
-
-.services{
-  position:relative;
-  background:
-    url('images/images.jpeg')
-    center / cover no-repeat;
-}
-
-.services .section-head{
-  max-width:none;
-  margin-bottom:0;
-}
-
-.services-intro{
-  display:grid;
-  grid-template-columns:.9fr 1.4fr;
-  gap:48px;
-  align-items:center;
-  margin-bottom:52px;
-}
-
-.namecard{
-  background:var(--white);
-  border:1px solid var(--line-dark);
-  overflow:hidden;
-  transition:
-    transform .25s ease,
-    border-color .25s ease,
-    box-shadow .25s ease;
-}
-
-.namecard:hover{
-  transform:translateY(-4px);
-  border-color:var(--accent);
-  box-shadow:0 16px 32px rgba(26,32,39,.10);
-}
-
-.namecard img{
-  width:100%;
-  display:block;
-  object-fit:contain;
-  background:var(--paper-deep);
-}
-
-.service-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:26px;
-}
-
-.service-card{
-  background:var(--white);
-  border:1px solid var(--line-dark);
-  overflow:hidden;
-  transition:
-    transform .25s ease,
-    border-color .25s ease,
-    box-shadow .25s ease;
-}
-
-.service-card:hover{
-  transform:translateY(-6px);
-  border-color:var(--accent);
-  box-shadow:0 16px 32px rgba(26,32,39,.10);
-}
-
-.service-photo{
-  aspect-ratio:4/3;
-  overflow:hidden;
-  background:var(--paper-deep);
-}
-
-.service-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform .5s ease;
-}
-
-.service-card:hover .service-photo img{
-  transform:scale(1.04);
-}
-
-.service-body{
-  padding:26px 24px 30px;
-}
-
-.service-body .tag{
-  font-family:var(--font-mono);
-  font-size:.68rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--accent-deep);
-}
-
-.service-body h3{
-  font-family:var(--font-display);
-  font-weight:600;
-  font-size:1.2rem;
-  margin:12px 0 10px;
-  color:var(--ink);
-}
-
-.service-body p{
-  font-size:.92rem;
-  line-height:1.6;
-  color:rgba(26,32,39,.68);
-}
-
-
-/* ===== TRACK RECORD ===== */
-
-.record{
-  position:relative;
-
-  background:
-    linear-gradient(
-      135deg,
-      #14191f 0%,
-      #1A2027 55%,
-      #252D35 100%
-    );
-
-  color:var(--white);
-
-  overflow:hidden;
-}
-
-.record::before{
-  content:"";
-
-  position:absolute;
-
-  inset:0;
-
-  background:
-    radial-gradient(
-      circle at 12% 18%,
-      rgba(199,207,214,.10),
-      transparent 28%
-    ),
-
-    linear-gradient(
-      90deg,
-      transparent 0 49.9%,
-      rgba(255,255,255,.045) 50%,
-      transparent 50.1%
-    );
-
-  pointer-events:none;
-}
-
-.record .wrap{
-  position:relative;
-  z-index:1;
-}
-
-.record .section-head{
-  max-width:720px;
-}
-
-.record .section-head .eyebrow{
-  color:var(--accent-light);
-}
-
-.record .section-head h2{
-  color:var(--white);
-
-  font-size:clamp(
-    2rem,
-    4vw,
-    3rem
-  );
-}
-
-.record .section-head p{
-  color:rgba(255,255,255,.62);
-}
-
-.record-grid{
-  display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:18px;
-}
-
-.record-cell{
-  position:relative;
-
-  min-height:250px;
-
-  background:
-    rgba(255,255,255,.055);
-
-  border:
-    1px solid rgba(255,255,255,.13);
-
-  padding:32px 28px;
-
-  display:flex;
-
-  flex-direction:column;
-
-  justify-content:space-between;
-
-  overflow:hidden;
-
-  transition:
-    transform .25s ease,
-    border-color .25s ease,
-    background .25s ease;
-}
-
-.record-cell::after{
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  right:0;
-  bottom:0;
-
-  height:3px;
-
-  background:var(--accent);
-
-  transform:scaleX(0);
-
-  transform-origin:left;
-
-  transition:transform .25s ease;
-}
-
-.record-cell:hover{
-  transform:translateY(-5px);
-
-  border-color:
-    rgba(199,207,214,.38);
-
-  background:
-    rgba(255,255,255,.085);
-}
-
-.record-cell:hover::after{
-  transform:scaleX(1);
-}
-
-.record-cell .tag{
-  font-family:var(--font-mono);
-
-  font-size:.68rem;
-
-  color:var(--accent-light);
-
-  letter-spacing:.14em;
-}
-
-.record-cell h3{
-  font-family:var(--font-display);
-
-  font-weight:600;
-
-  font-size:clamp(
-    1.55rem,
-    2.6vw,
-    2rem
-  );
-
-  margin:16px 0 10px;
-
-  letter-spacing:-.02em;
-}
-
-.record-cell p{
-  font-size:.88rem;
-
-  line-height:1.65;
-
-  color:rgba(255,255,255,.62);
-
-  max-width:290px;
-}
-
-
-/* ================================================= */
-/* ===== RECOGNITION ===== */
-/* ================================================= */
-
-.recognition{
-
-  position:relative;
-
-  background:
-    linear-gradient(
-      135deg,
-      #14191f 0%,
-      #1A2027 55%,
-      #252D35 100%
-    );
-
-  color:var(--white);
-
-  overflow:hidden;
-
-  padding:104px 0;
-}
-
-.recognition::before{
-
-  content:"";
-
-  position:absolute;
-
-  inset:0;
-
-  background:
-
-    radial-gradient(
-      circle at 12% 18%,
-      rgba(199,207,214,.10),
-      transparent 28%
-    ),
-
-    linear-gradient(
-      90deg,
-      transparent 0 49.9%,
-      rgba(255,255,255,.045) 50%,
-      transparent 50.1%
-    );
-
-  pointer-events:none;
-}
-
-.recognition .wrap{
-
-  position:relative;
-
-  z-index:1;
-
-}
-
-
-/* ===== MY ACHIEVEMENT ===== */
-/* ONLY ADDED */
-
-.achievement-title{
-
-  font-family:var(--font-mono);
-
-  font-size:.78rem;
-
-  font-weight:500;
-
-  letter-spacing:.22em;
-
-  text-transform:uppercase;
-
-  color:var(--accent-light);
-
-  margin-bottom:30px;
-
-  text-align:left;
-}
-
-.achievement-title::before{
-
-  content:"— ";
-
-  color:var(--accent);
-}
-
-
-.recognition-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:18px;
-
-  width:100%;
-}
-
-.recognition-main{
-
-  grid-column:1 / -1;
-
-  width:100%;
-
-  background:
-    rgba(255,255,255,.055);
-
-  border:
-    1px solid rgba(255,255,255,.13);
-
-  padding:14px;
-
-  overflow:hidden;
-
-  transition:
-    transform .3s ease,
-    border-color .3s ease,
-    background .3s ease;
-}
-
-.recognition-card{
-
-  width:100%;
-
-  background:
-    rgba(255,255,255,.055);
-
-  border:
-    1px solid rgba(255,255,255,.13);
-
-  padding:14px;
-
-  overflow:hidden;
-
-  transition:
-    transform .3s ease,
-    border-color .3s ease,
-    background .3s ease;
-}
-
-.recognition-main:hover,
-.recognition-card:hover{
-
-  transform:translateY(-5px);
-
-  border-color:
-    rgba(199,207,214,.38);
-
-  background:
-    rgba(255,255,255,.085);
-}
-
-.recognition-main img{
-
-  width:100%;
-
-  display:block;
-
-  aspect-ratio:16 / 8;
-
-  object-fit:cover;
-
-  object-position:center;
-}
-
-.recognition-card img{
-
-  width:100%;
-
-  display:block;
-
-  aspect-ratio:4 / 3;
-
-  object-fit:cover;
-
-  object-position:center;
-}
-
-
-/* ================================================= */
-/* ===== CUSTOMERS ===== */
-/* ================================================= */
-
-.customers{
-
-  position:relative;
-
-  background:
-    linear-gradient(
-      135deg,
-      #14191f 0%,
-      #1A2027 55%,
-      #252D35 100%
-    );
-
-  color:var(--white);
-
-  overflow:hidden;
-
-  padding:104px 0;
-}
-
-
-/* subtle background effect */
-
-.customers::before{
-
-  content:"";
-
-  position:absolute;
-
-  inset:0;
-
-  background:
-
-    radial-gradient(
-      circle at 85% 20%,
-      rgba(199,207,214,.09),
-      transparent 30%
-    ),
-
-    linear-gradient(
-      90deg,
-      transparent 0 49.9%,
-      rgba(255,255,255,.045) 50%,
-      transparent 50.1%
-    );
-
-  pointer-events:none;
-}
-
-
-.customers .wrap{
-
-  position:relative;
-
-  z-index:1;
-
-}
-
-
-/* ===== CUSTOMER INTRO ===== */
-
-.customers-head{
-
-  max-width:720px;
-
-  margin-bottom:52px;
-}
-
-.customers-head .eyebrow{
-
-  color:var(--accent-light);
-
-  margin-bottom:14px;
-}
-
-.customers-head h2{
-
-  font-family:var(--font-display);
-
-  font-weight:600;
-
-  color:var(--white);
-
-  font-size:clamp(
-    2rem,
-    4vw,
-    3rem
-  );
-
-  letter-spacing:-.01em;
-}
-
-.customers-head p{
-
-  margin-top:16px;
-
-  max-width:650px;
-
-  color:rgba(255,255,255,.65);
-
-  font-size:1rem;
-
-  line-height:1.75;
-}
-
-
-/* ===== CUSTOMER PHOTO GRID ===== */
-
-.customer-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap:18px;
-}
-
-
-/* ===== PHOTO CARD ===== */
-
-.customer-card{
-
-  position:relative;
-
-  overflow:hidden;
-
-  background:
-    rgba(255,255,255,.055);
-
-  border:
-    1px solid rgba(255,255,255,.13);
-
-  padding:10px;
-
-  transition:
-    transform .3s ease,
-    border-color .3s ease,
-    background .3s ease;
-}
-
-
-/* Make selected photos larger */
-
-.customer-card:nth-child(1),
-.customer-card:nth-child(6){
-
-  grid-column:span 2;
-}
-
-
-.customer-card:hover{
-
-  transform:translateY(-5px);
-
-  border-color:
-    rgba(199,207,214,.38);
-
-  background:
-    rgba(255,255,255,.085);
-}
-
-
-/* ===== CUSTOMER PHOTO ===== */
-
-.customer-card img{
-
-  width:100%;
-
-  height:280px;
-
-  display:block;
-
-  object-fit:cover;
-
-  object-position:center;
-
-  transition:
-    transform .45s ease;
-}
-
-
-.customer-card:nth-child(1) img,
-.customer-card:nth-child(6) img{
-
-  height:360px;
-}
-
-
-.customer-card:hover img{
-
-  transform:scale(1.025);
-}
-
-
-/* ===== CUSTOMER FOOTNOTE ===== */
-
-.customer-note{
-
-  margin-top:42px;
-
-  padding-top:24px;
-
-  border-top:
-    1px solid rgba(255,255,255,.12);
-
-  font-family:var(--font-display);
-
-  font-style:italic;
-
-  font-size:1.15rem;
-
-  color:var(--accent-light);
-
-  text-align:center;
-}
-
-
-/* ===== FOOTER ===== */
-
-footer{
-
-  background:var(--ink);
-
-  color:rgba(255,255,255,.5);
-
-  border-top:
-    1px solid var(--line);
-
-  padding:26px 0;
-
-  font-family:var(--font-mono);
-
-  font-size:.74rem;
-
-  display:flex;
-
-  justify-content:space-between;
-
-  flex-wrap:wrap;
-
-  gap:10px;
-
-  margin-bottom:76px;
-}
-
-
-/* ===== BOTTOM BAR ===== */
-
-.bottom-bar{
-
-  position:fixed;
-
-  left:0;
-  right:0;
-  bottom:0;
-
-  z-index:60;
-
-  background:var(--white);
-
-  border-top:
-    1px solid var(--line-dark);
-
-  box-shadow:
-    0 -8px 24px rgba(26,32,39,.08);
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  gap:20px;
-
-  padding:12px 28px 14px;
-}
-
-
-/* ===== FLP FONT CHANGED ONLY ===== */
-
-.bottom-brand{
-
-  font-family:"Montserrat",sans-serif;
-
-  font-weight:600;
-
-  font-size:1.08rem;
-
-  letter-spacing:.08em;
-
-  text-transform:uppercase;
-
-  color:var(--ink);
-
-  white-space:nowrap;
-}
-
-.bottom-items{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:36px;
-}
-
-.bottom-item{
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-  gap:6px;
-}
-
-.bottom-item .icon-btn{
-
-  display:inline-flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  width:44px;
-  height:44px;
-
-  border-radius:50%;
-
-  border:1px solid var(--ink);
-
-  background:transparent;
-
-  transition:
-    background .2s ease,
-    border-color .2s ease;
-}
-
-.bottom-item .icon-btn img{
-
-  width:22px;
-  height:22px;
-
-  object-fit:contain;
-}
-
-.bottom-item:hover .icon-btn{
-
-  background:var(--accent);
-
-  border-color:var(--accent);
-}
-
-.bottom-item .label{
-
-  font-family:var(--font-body);
-
-  font-weight:500;
-
-  font-size:.74rem;
-
-  letter-spacing:.01em;
-
-  color:rgba(26,32,39,.65);
-
-  white-space:nowrap;
-}
-
-.bottom-item:hover .label{
-
-  color:var(--ink);
-}
-
-
-/* ===== RESPONSIVE ===== */
-
-@media(min-width:900px){
-
-  .nav-links{
-    display:flex;
-  }
-
-}
-
-
-@media(max-width:900px){
-
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
-
-  .portrait{
-    max-width:280px;
-  }
-
-  .record-grid{
-    grid-template-columns:1fr;
-  }
-
-  .service-grid{
-    grid-template-columns:1fr;
-  }
-
-  .services-intro{
-    grid-template-columns:1fr;
-    gap:28px;
-  }
-
-  .recognition-grid{
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-
-  .recognition-main{
-    grid-column:1 / -1;
-  }
-
-
-  /* Customers */
-
-  .customer-grid{
-
-    grid-template-columns:
-      repeat(2,1fr);
-
-  }
-
-  .customer-card:nth-child(1),
-  .customer-card:nth-child(6){
-
-    grid-column:span 2;
-
-  }
-
-}
-
-
-@media(max-width:520px){
-
-  section{
-    padding:72px 0;
-  }
-
-  .hero{
-    padding:140px 0 80px;
-  }
-
-  .wrap{
-    padding:0 20px;
-  }
-
-  .record-grid{
-    grid-template-columns:1fr;
-  }
-
-  .recognition-grid{
-    grid-template-columns:1fr;
-    gap:14px;
-  }
-
-  .recognition-main{
-    grid-column:auto;
-  }
-
-  .recognition-main img{
-    aspect-ratio:4 / 3;
-  }
-
-
-  /* Customers mobile */
-
-  .customer-grid{
-
-    grid-template-columns:1fr;
-
-    gap:14px;
-
-  }
-
-  .customer-card:nth-child(1),
-  .customer-card:nth-child(6){
-
-    grid-column:auto;
-
-  }
-
-  .customer-card img,
-  .customer-card:nth-child(1) img,
-  .customer-card:nth-child(6) img{
-
-    height:auto;
-
-    aspect-ratio:4 / 3;
-
-  }
-
-
-  .bottom-brand{
-    display:none;
-  }
-
-  .bottom-bar{
-    justify-content:center;
-
-    padding:
-      12px 20px 14px;
-  }
-
-  .bottom-items{
-    gap:28px;
-  }
-
-}
-
-
-/* ===== REDUCED MOTION ===== */
-
-@media(prefers-reduced-motion:reduce){
-
-  html{
-    scroll-behavior:auto;
-  }
-
-  .reveal{
-    opacity:1;
-
-    transform:none;
-
-    transition:none;
-  }
-
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<!-- ================================================= -->
-<!-- NAV -->
-<!-- ================================================= -->
-
-<header>
-
-  <nav class="wrap">
-
-    <div class="brandmark">
-
-      <span class="name">
-        Kong Wei Yip
-      </span>
-
-      <span class="co">
-        FLP REALTY SDN BHD
-      </span>
-
-    </div>
-
-
-    <ul class="nav-links">
-
-      <li>
-        <a href="#story">
-          Story
-        </a>
-      </li>
-
-      <li>
-        <a href="#services">
-          Services
-        </a>
-      </li>
-
-      <li>
-        <a href="#record">
-          My Journey
-        </a>
-      </li>
-
-      <li>
-        <a href="#recognition">
-          Recognition
-        </a>
-      </li>
-
-      <li>
-        <a href="#customers">
-          Customers
-        </a>
-      </li>
-
-    </ul>
-
-  </nav>
-
-</header>
-
-
-<main>
-
-
-<!-- ================================================= -->
-<!-- HERO -->
-<!-- ================================================= -->
-
-<section class="hero">
-
-  <div
-    class="blueprint-grid"
-    aria-hidden="true"
-  ></div>
-
-
-  <div class="wrap hero-grid">
-
-
-    <div class="portrait">
-
-      <img
-        src="images/Profile.jpeg"
-        alt="Kong Wei Yip, Real Estate Project Specialist at FLP Realty"
-      >
-
-    </div>
-
-
-    <div>
-
-      <p class="eyebrow">
-        Where Property Meets Strategy
-      </p>
-
-
-      <h1>
-
-        Turning property opportunities into
-
-        <em>
-          smart decisions.
-        </em>
-
-      </h1>
-
-
-      <p class="hero-sub">
-
-        Kong Wei Yip — Real Estate Project Specialist
-        at FLP Realty Sdn Bhd.
-
-        6 years in the industry, 180+ clients helped,
-        and a 30-person team he trains and leads.
-
-      </p>
-
-
-      <p class="hero-quote">
-
-        "Where property meets strategy."
-
-      </p>
-
-
-      <div class="hero-actions">
-
-        <a
-          class="btn solid"
-          href="https://wa.me/60106660200"
-          target="_blank"
-          rel="noopener"
-        >
-          Chat on WhatsApp
-        </a>
-
-
-        <a
-          class="btn"
-          href="https://www.instagram.com/weiyipp_____/"
-          target="_blank"
-          rel="noopener"
-        >
-          View IG Profile
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- ================================================= -->
-<!-- STORY -->
-<!-- ================================================= -->
-
-<section
-  class="story"
-  id="story"
->
-
-  <div class="wrap">
-
-
-    <div class="section-head reveal">
-
-      <p class="eyebrow">
-        In His Own Words
-      </p>
-
-      <h2>
-        I'm Wei Yip.
-      </h2>
-
-    </div>
-
-
-    <div class="philosophy reveal">
-
-
-      <p>
-
-        With 6 years of experience in real estate,
-        I have helped 180+ clients find and secure
-        homes that truly fit their needs and goals.
-
-      </p>
-
-
-      <p>
-
-        I specialise in property market analysis,
-        project evaluation and data-driven insights,
-        helping clients understand the numbers and
-        make confident property decisions.
-
-      </p>
-
-
-      <blockquote>
-
-        I don't believe in simply selling a property.<br>
-
-        I believe in helping people find the right
-        property for them.
-
-      </blockquote>
-
-
-      <p>
-
-        Beyond property sales, I also lead a team of
-        30 young real estate professionals, where I
-        focus on training and developing their knowledge
-        in real estate fundamentals, sales strategies,
-        problem-solving and client management.
-
-      </p>
-
-
-      <p class="vision-label">
-        My Vision
-      </p>
-
-
-      <p class="vision-text">
-
-        Help more people make the right property
-        decisions, while building a stronger generation
-        of real estate professionals.
-
-      </p>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- ================================================= -->
-<!-- SERVICES -->
-<!-- ================================================= -->
-
-<section
-  class="services"
-  id="services"
->
-
-  <div class="wrap">
-
-
-    <div class="services-intro reveal">
-
-      <div class="namecard">
-        <img
-          src="images/P1.jpeg"
-          alt="Kong Wei Yip name card, FLP Realty Sdn Bhd"
-        >
-      </div>
-
-      <div class="section-head">
-
-        <p class="eyebrow">
-          Full-Circle Support
-        </p>
-
-        <h2>
-          Beyond the sale.
-        </h2>
-
-        <p>
-          A property decision doesn't end at signing —
-          Wei Yip works alongside trusted specialists
-          to support clients through financing,
-          ownership, and long-term planning.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <div class="service-grid reveal">
-
-
-      <!-- S1 -->
-
-      <div class="service-card">
-
-        <div class="service-photo">
-          <img
-            src="images/S1.png"
-            alt="Loan Consultant"
-          >
-        </div>
-
-        <div class="service-body">
-
-          <span class="tag">
-            01 / FINANCING
-          </span>
-
-          <h3>
-            Loan Consultant
-          </h3>
-
-          <p>
-            Helps clients understand their financing
-            options and structure a loan that fits
-            their budget and long-term goals.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- S2 -->
-
-      <div class="service-card">
-
-        <div class="service-photo">
-          <img
-            src="images/S2.png"
-            alt="Property Management"
-          >
-        </div>
-
-        <div class="service-body">
-
-          <span class="tag">
-            02 / OWNERSHIP
-          </span>
-
-          <h3>
-            Property Management
-          </h3>
-
-          <p>
-            Supports owners and investors after the
-            purchase — from tenancy matters to the
-            day-to-day upkeep of the property.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- S3 -->
-
-      <div class="service-card">
-
-        <div class="service-photo">
-          <img
-            src="images/S3.png"
-            alt="Financial Planner"
-          >
-        </div>
-
-        <div class="service-body">
-
-          <span class="tag">
-            03 / PLANNING
-          </span>
-
-          <h3>
-            Financial Planner
-          </h3>
-
-          <p>
-            Helps clients see how each property fits
-            into their bigger financial picture, so the
-            decision holds up in the long run.
-          </p>
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- ================================================= -->
-<!-- TRACK RECORD -->
-<!-- ================================================= -->
-
-<section
-  class="record"
-  id="record"
->
-
-  <div class="wrap">
-
-
-    <div class="section-head reveal">
-
-      <p class="eyebrow">
-        My Journey
-      </p>
-
-      <h2>
-        Numbers that back the story.
-      </h2>
-
-    </div>
-
-
-    <div class="record-grid reveal">
-
-
-      <div class="record-cell">
-
-        <span class="tag">
-          EXPERIENCE
-        </span>
-
-        <h3>
-          6 Years
-        </h3>
-
-        <p>
-          Active in real estate —
-          project sales, market analysis,
-          and client consultation.
-        </p>
-
-      </div>
-
-
-      <div class="record-cell">
-
-        <span class="tag">
-          CLIENTS
-        </span>
-
-        <h3>
-          180+ Clients
-        </h3>
-
-        <p>
-          Helped find and secure homes
-          that truly fit their needs
-          and goals.
-        </p>
-
-      </div>
-
-
-      <div class="record-cell">
-
-        <span class="tag">
-          LEADERSHIP
-        </span>
-
-        <h3>
-          30-Person Team
-        </h3>
-
-        <p>
-          Leads and trains a team of
-          young real estate professionals
-          as Group District Leader.
-        </p>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- ================================================= -->
-<!-- RECOGNITION -->
-<!-- ================================================= -->
-
-<section
-  class="recognition"
-  id="recognition"
->
-
-
-  <div class="wrap">
-
-
-    <!-- ONLY ADDED -->
-
-    <div class="achievement-title">
-      My Achievement
-    </div>
-
-
-    <div class="recognition-grid">
-
-
-      <!-- R1 -->
-
-      <div class="recognition-main">
-
-        <img
-          src="images/R1.jpeg"
-          alt="Recognition 1"
-        >
-
-      </div>
-
-
-      <!-- R2 -->
-
-      <div class="recognition-card">
-
-        <img
-          src="images/R2.jpeg"
-          alt="Recognition 2"
-        >
-
-      </div>
-
-
-      <!-- R3 -->
-
-      <div class="recognition-card">
-
-        <img
-          src="images/R3.jpeg"
-          alt="Recognition 3"
-        >
-
-      </div>
-
-
-      <!-- R4 -->
-
-      <div class="recognition-card">
-
-        <img
-          src="images/R4.jpeg"
-          alt="Recognition 4"
-        >
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- ================================================= -->
-<!-- CUSTOMERS -->
-<!-- ================================================= -->
-
-<section
-  class="customers"
-  id="customers"
->
-
-
-  <div class="wrap">
-
-
-    <!-- CUSTOMER INTRO -->
-
-    <div class="customers-head reveal">
-
-      <p class="eyebrow">
-        Client Stories
-      </p>
-
-      <h2>
-        Trusted by the people I serve.
-      </h2>
-
-      <p>
-
-        Every property journey is different.
-        I am grateful to every customer who has
-        trusted me throughout the process —
-        from the first conversation to finding
-        a place they can truly call home.
-
-      </p>
-
-    </div>
-
-
-
-    <!-- CUSTOMER PHOTOS -->
-
-    <div class="customer-grid reveal">
-
-
-      <!-- C1 -->
-
-      <div class="customer-card">
-
-        <img
-          src="images/C1.jpeg"
-          alt="Customer 1"
-          loading="lazy"
-        >
-
-      </div>
-
-
-      <!-- C2 -->
-
-      <div class="customer-card">
-
-        <img
-          src="images/C2.jpeg"
-          alt="Customer 2"
-          loading="lazy"
-        >
-
-      </div>
-
-
-      <!-- C3 -->
-
-      <div class="customer-card">
-
-        <img
-          src="images/C3.jpeg"
-          alt="Customer 3"
-          loading="lazy"
-        >
-
-      </div>
-
-
-      <!-- C4 -->
-
-      <div class="customer-card">
-
-        <img
-          src="images/C4.jpeg"
-          alt="Customer 4"
-          loading="lazy"
-        >
-
-      </div>
-
-
-      <!-- C5 -->
-
-      <div class="customer-card">
-
-        <img
-          src="images/C5.jpeg"
-          alt="Customer 5"
-          loading="lazy"
-        >
-
-      </div>
-
-
-      <!-- C6 -->
-
-      <div class="customer-card">
-
-        <img
-          src="images/C6.jpeg"
-          alt="Customer 6"
-          loading="lazy"
-        >
-
-      </div>
-
-
-      <!-- C7 -->
-
-      <div class="customer-card">
-
-        <img
-          src="images/C7.jpeg"
-          alt="Customer 7"
-          loading="lazy"
-        >
-
-      </div>
-
-
-      <!-- C8 -->
-
-      <div class="customer-card">
-
-        <img
-          src="images/C8.jpeg"
-          alt="Customer 8"
-          loading="lazy"
-        >
-
-      </div>
-
-
-      <!-- C9 -->
-
-      <div class="customer-card">
-
-        <img
-          src="images/C9.jpeg"
-          alt="Customer 9"
-          loading="lazy"
-        >
-
-      </div>
-
-
-      <!-- C10 -->
-
-      <div class="customer-card">
-
-        <img
-          src="images/C10.jpeg"
-          alt="Customer 10"
-          loading="lazy"
-        >
-
-      </div>
-
-
-    </div>
-
-
-
-    <!-- THANK YOU MESSAGE -->
-
-    <p class="customer-note">
-
-      "Thank you for every trust, every referral,
-      and every opportunity to be part of your
-      property journey."
-
-    </p>
-
-
-  </div>
-
-</section>
-
-
-
-</main>
-
-
-
-<!-- ================================================= -->
-<!-- FOOTER -->
-<!-- ================================================= -->
-
-<footer class="wrap">
-
-  <span>
-
-    © <span id="year"></span>
-    FLP Realty Sdn Bhd · Kong Wei Yip
-
-  </span>
-
-
-  <span>
-    Where Property Meets Strategy
-  </span>
-
-</footer>
-
-
-
-<!-- ================================================= -->
-<!-- BOTTOM BAR -->
-<!-- ================================================= -->
-
-<div class="bottom-bar">
-
-
-  <span class="bottom-brand">
-    FLP Realty Sdn Bhd
-  </span>
-
-
-  <div class="bottom-items">
-
-
-    <!-- WhatsApp -->
-
-    <a
-      class="bottom-item"
-      href="https://wa.me/60106660200"
-      target="_blank"
-      rel="noopener"
-      aria-label="WhatsApp"
-    >
-
-      <span class="icon-btn">
-
-        <img
-          src="images/WA.png"
-          alt=""
-        >
-
-      </span>
-
-
-      <span class="label">
-        WhatsApp
-      </span>
-
-    </a>
-
-
-
-    <!-- Phone -->
-
-    <a
-      class="bottom-item"
-      href="tel:+60106660200"
-      aria-label="Call"
-    >
-
-      <span class="icon-btn">
-
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          width="20"
-          height="20"
-        >
-
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 0 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-
-        </svg>
-
-      </span>
-
-
-      <span class="label">
-        010-666 0200
-      </span>
-
-    </a>
-
-
-
-    <!-- Instagram -->
-
-    <a
-      class="bottom-item"
-      href="https://www.instagram.com/weiyipp_____/"
-      target="_blank"
-      rel="noopener"
-      aria-label="Instagram"
-    >
-
-      <span class="icon-btn">
-
-        <img
-          src="images/IG.png"
-          alt=""
-        >
-
-      </span>
-
-
-      <span class="label">
-        @weiyipp_____
-      </span>
-
-    </a>
-
-
-  </div>
-
-</div>
-
-
-
-<!-- ================================================= -->
-<!-- JAVASCRIPT -->
-<!-- ================================================= -->
-
-<script>
-
-document.getElementById('year').textContent =
-  new Date().getFullYear();
-
-
-const revealEls =
-  document.querySelectorAll('.reveal');
-
-
-const io =
-  new IntersectionObserver(
-
-    (entries) => {
-
-      entries.forEach(entry => {
-
-        if(entry.isIntersecting){
-
-          entry.target.classList.add(
-            'in-view'
-          );
-
-          io.unobserve(
-            entry.target
-          );
-
-        }
-
-      });
-
-    },
-
-    {
-      threshold:0.15
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kong Wei Yip · FLP Realty Sdn Bhd</title>
+
+  <meta
+    name="description"
+    content="Kong Wei Yip, Real Estate Project Specialist at FLP Realty Sdn Bhd — turning property opportunities into smart decisions."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Italiana&family=Montserrat:wght@500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --ink: #1A2027;
+      --ink-soft: #2E3742;
+      --paper: #EEF1F4;
+      --paper-deep: #E0E5EA;
+      --white: #FFFFFF;
+      --accent: #8B98A6;
+      --accent-light: #C7CFD6;
+      --accent-deep: #47535F;
+      --line: rgba(255, 255, 255, 0.16);
+      --line-dark: rgba(26, 32, 39, 0.14);
+
+      --font-display: "Fraunces", serif;
+      --font-body: "IBM Plex Sans", sans-serif;
+      --font-mono: "IBM Plex Mono", monospace;
     }
 
-  );
+    /* ===== GLOBAL ===== */
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-revealEls.forEach(
-  el => io.observe(el)
-);
+    html {
+      scroll-behavior: smooth;
+    }
 
-</script>
+    body {
+      font-family: var(--font-body);
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* ===== NAV ===== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(26, 32, 39, .92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav.wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+      color: var(--white);
+    }
+
+    .brandmark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brandmark .name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.15rem;
+    }
+
+    .brandmark .co {
+      font-family: var(--font-mono);
+      font-size: .62rem;
+      letter-spacing: .16em;
+      color: var(--accent-light);
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: none;
+      gap: 26px;
+      font-family: var(--font-mono);
+      font-size: .76rem;
+      letter-spacing: .05em;
+      color: rgba(255, 255, 255, .75);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-light);
+    }
+
+    /* ===== BUTTONS ===== */
+
+    .btn {
+      font-family: var(--font-mono);
+      font-size: .76rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 11px 20px;
+      border-radius: 2px;
+      border: 1px solid var(--accent);
+      color: var(--white);
+      transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      color: var(--ink);
+      transform: translateY(-1px);
+    }
+
+    .btn.solid {
+      background: var(--accent);
+      color: var(--ink);
+    }
+
+    .btn.solid:hover {
+      background: var(--accent-light);
+    }
+
+    /* ===== HERO ===== */
+
+    .hero {
+      position: relative;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(26, 32, 39, .55),
+          rgba(26, 32, 39, .72)
+        ),
+        url("images/BG.jpeg") center 75% / 160% no-repeat;
+      color: var(--white);
+      padding: 168px 0 100px;
+      overflow: hidden;
+    }
+
+    .blueprint-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          90deg,
+          var(--line) 0 1px,
+          transparent 1px 88px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          var(--line) 0 1px,
+          transparent 1px 88px
+        );
+      opacity: .5;
+      mask-image:
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, .9),
+          rgba(0, 0, 0, .15) 85%
+        );
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: .7fr 1.5fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero .eyebrow {
+      color: var(--accent-light);
+      margin-bottom: 22px;
+    }
+
+    .hero .eyebrow::before {
+      content: "— ";
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(2.1rem, 4.6vw, 3.4rem);
+      line-height: 1.1;
+      letter-spacing: -.01em;
+    }
+
+    h1 em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--accent-light);
+    }
+
+    .hero-sub {
+      margin-top: 24px;
+      font-size: 1.05rem;
+      max-width: 520px;
+      color: rgba(255, 255, 255, .82);
+    }
+
+    .hero-quote {
+      margin-top: 26px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--accent-light);
+      border-left: 2px solid var(--accent);
+      padding-left: 16px;
+      max-width: 480px;
+    }
+
+    .hero-actions {
+      margin-top: 36px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .portrait {
+      aspect-ratio: 4 / 5;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      max-width: 400px;
+    }
+
+    @media (min-width: 901px) {
+      .portrait {
+        margin-left: -96px;
+      }
+    }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ===== SECTION ===== */
+
+    section {
+      padding: 104px 0;
+    }
+
+    .section-head {
+      max-width: 640px;
+      margin-bottom: 52px;
+    }
+
+    .section-head .eyebrow {
+      color: var(--accent-deep);
+      margin-bottom: 14px;
+    }
+
+    .section-head h2 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+      letter-spacing: -.01em;
+    }
+
+    .section-head p {
+      margin-top: 14px;
+      color: rgba(26, 32, 39, .72);
+      font-size: 1rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition:
+        opacity .7s ease,
+        transform .7s ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ===== STORY ===== */
+
+    .story {
+      position: relative;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(26, 32, 39, .5),
+          rgba(26, 32, 39, .62)
+        ),
+        url("images/BG2.jpeg") center / cover no-repeat;
+    }
+
+    .story .section-head p,
+    .story .philosophy p {
+      color: var(--white);
+      text-shadow: 0 1px 6px rgba(0, 0, 0, .45);
+    }
+
+    .story .section-head h2,
+    .story .philosophy blockquote,
+    .story .philosophy .vision-text {
+      color: var(--white);
+    }
+
+    .philosophy {
+      max-width: 700px;
+    }
+
+    .philosophy p {
+      font-size: 1.02rem;
+      color: rgba(26, 32, 39, .78);
+      margin-bottom: 20px;
+    }
+
+    .philosophy blockquote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1.35rem;
+      line-height: 1.4;
+      color: var(--ink);
+      border-left: 3px solid var(--accent);
+      padding: 4px 0 4px 24px;
+      margin: 34px 0;
+    }
+
+    .philosophy .vision-label {
+      font-family: var(--font-mono);
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+      margin-bottom: 8px;
+    }
+
+    .philosophy .vision-text {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: var(--ink);
+      margin-bottom: 0;
+    }
+
+    /* ===== SERVICES ===== */
+
+    .services {
+      position: relative;
+      background:
+        url("images/images.jpeg") center / cover no-repeat;
+    }
+
+    .services .section-head {
+      max-width: none;
+      margin-bottom: 0;
+    }
+
+    .services-intro {
+      display: grid;
+      grid-template-columns: .9fr 1.4fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 52px;
+    }
+
+    .namecard {
+      background: var(--white);
+      border: 1px solid var(--line-dark);
+      overflow: hidden;
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .namecard:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 16px 32px rgba(26, 32, 39, .10);
+    }
+
+    .namecard img {
+      width: 100%;
+      display: block;
+      object-fit: contain;
+      background: var(--paper-deep);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--line-dark);
+      overflow: hidden;
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+      box-shadow: 0 16px 32px rgba(26, 32, 39, .10);
+    }
+
+    .service-photo {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--paper-deep);
+    }
+
+    .service-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .service-card:hover .service-photo img {
+      transform: scale(1.04);
+    }
+
+    .service-body {
+      padding: 26px 24px 30px;
+    }
+
+    .service-body .tag {
+      font-family: var(--font-mono);
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+
+    .service-body h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin: 12px 0 10px;
+      color: var(--ink);
+    }
+
+    .service-body p {
+      font-size: .92rem;
+      line-height: 1.6;
+      color: rgba(26, 32, 39, .68);
+    }
+
+    /* ===== TRACK RECORD ===== */
+
+    .record {
+      position: relative;
+      background:
+        linear-gradient(
+          135deg,
+          #14191f 0%,
+          #1A2027 55%,
+          #252D35 100%
+        );
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .record::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(
+          circle at 12% 18%,
+          rgba(199, 207, 214, .10),
+          transparent 28%
+        ),
+        linear-gradient(
+          90deg,
+          transparent 0 49.9%,
+          rgba(255, 255, 255, .045) 50%,
+          transparent 50.1%
+        );
+      pointer-events: none;
+    }
+
+    .record .wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .record .section-head {
+      max-width: 720px;
+    }
+
+    .record .section-head .eyebrow {
+      color: var(--accent-light);
+    }
+
+    .record .section-head h2 {
+      color: var(--white);
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .record .section-head p {
+      color: rgba(255, 255, 255, .62);
+    }
+
+    .record-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .record-cell {
+      position: relative;
+      min-height: 250px;
+      background: rgba(255, 255, 255, .055);
+      border: 1px solid rgba(255, 255, 255, .13);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease;
+    }
+
+    .record-cell::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .25s ease;
+    }
+
+    .record-cell:hover {
+      transform: translateY(-5px);
+      border-color: rgba(199, 207, 214, .38);
+      background: rgba(255, 255, 255, .085);
+    }
+
+    .record-cell:hover::after {
+      transform: scaleX(1);
+    }
+
+    .record-cell .tag {
+      font-family: var(--font-mono);
+      font-size: .68rem;
+      color: var(--accent-light);
+      letter-spacing: .14em;
+    }
+
+    .record-cell h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(1.55rem, 2.6vw, 2rem);
+      margin: 16px 0 10px;
+      letter-spacing: -.02em;
+    }
+
+    .record-cell p {
+      font-size: .88rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, .62);
+      max-width: 290px;
+    }
+
+    /* ===== RECOGNITION ===== */
+
+    .recognition {
+      position: relative;
+      background:
+        linear-gradient(
+          135deg,
+          #14191f 0%,
+          #1A2027 55%,
+          #252D35 100%
+        );
+      color: var(--white);
+      overflow: hidden;
+      padding: 104px 0;
+    }
+
+    .recognition::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(
+          circle at 12% 18%,
+          rgba(199, 207, 214, .10),
+          transparent 28%
+        ),
+        linear-gradient(
+          90deg,
+          transparent 0 49.9%,
+          rgba(255, 255, 255, .045) 50%,
+          transparent 50.1%
+        );
+      pointer-events: none;
+    }
+
+    .recognition .wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .achievement-title {
+      font-family: var(--font-mono);
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    .achievement-title::before {
+      content: "— ";
+      color: var(--accent);
+    }
+
+    .recognition-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      width: 100%;
+    }
+
+    .recognition-main {
+      grid-column: 1 / -1;
+      width: 100%;
+      background: rgba(255, 255, 255, .055);
+      border: 1px solid rgba(255, 255, 255, .13);
+      padding: 14px;
+      overflow: hidden;
+      transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+    }
+
+    .recognition-card {
+      width: 100%;
+      background: rgba(255, 255, 255, .055);
+      border: 1px solid rgba(255, 255, 255, .13);
+      padding: 14px;
+      overflow: hidden;
+      transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+    }
+
+    .recognition-main:hover,
+    .recognition-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(199, 207, 214, .38);
+      background: rgba(255, 255, 255, .085);
+    }
+
+    .recognition-main img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 8;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .recognition-card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* ===== CUSTOMERS ===== */
+
+    .customers {
+      position: relative;
+      background:
+        linear-gradient(
+          135deg,
+          #14191f 0%,
+          #1A2027 55%,
+          #252D35 100%
+        );
+      color: var(--white);
+      overflow: hidden;
+      padding: 104px 0;
+    }
+
+    .customers::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(199, 207, 214, .09),
+          transparent 30%
+        ),
+        linear-gradient(
+          90deg,
+          transparent 0 49.9%,
+          rgba(255, 255, 255, .045) 50%,
+          transparent 50.1%
+        );
+      pointer-events: none;
+    }
+
+    .customers .wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .customers-head {
+      max-width: 720px;
+      margin-bottom: 52px;
+    }
+
+    .customers-head .eyebrow {
+      color: var(--accent-light);
+      margin-bottom: 14px;
+    }
+
+    .customers-head h2 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--white);
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -.01em;
+    }
+
+    .customers-head p {
+      margin-top: 16px;
+      max-width: 650px;
+      color: rgba(255, 255, 255, .65);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .customer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .customer-card {
+      position: relative;
+      overflow: hidden;
+      background: rgba(255, 255, 255, .055);
+      border: 1px solid rgba(255, 255, 255, .13);
+      padding: 10px;
+      transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+    }
+
+    .customer-card:nth-child(1),
+    .customer-card:nth-child(6) {
+      grid-column: span 2;
+    }
+
+    .customer-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(199, 207, 214, .38);
+      background: rgba(255, 255, 255, .085);
+    }
+
+    .customer-card img {
+      width: 100%;
+      height: 280px;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .45s ease;
+    }
+
+    .customer-card:nth-child(1) img,
+    .customer-card:nth-child(6) img {
+      height: 360px;
+    }
+
+    .customer-card:hover img {
+      transform: scale(1.025);
+    }
+
+    .customer-note {
+      margin-top: 42px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--accent-light);
+      text-align: center;
+    }
+
+    /* ===== FOOTER ===== */
+
+    footer {
+      background: var(--ink);
+      color: rgba(255, 255, 255, .5);
+      border-top: 1px solid var(--line);
+      padding: 26px 0;
+      font-family: var(--font-mono);
+      font-size: .74rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 76px;
+    }
+
+    /* ===== BOTTOM BAR ===== */
+
+    .bottom-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 60;
+      background: var(--white);
+      border-top: 1px solid var(--line-dark);
+      box-shadow: 0 -8px 24px rgba(26, 32, 39, .08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 12px 28px 14px;
+    }
+
+    .bottom-brand {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 1.08rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .bottom-items {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .bottom-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .bottom-item .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--ink);
+      background: transparent;
+      transition:
+        background .2s ease,
+        border-color .2s ease;
+    }
+
+    .bottom-item .icon-btn img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .bottom-item:hover .icon-btn {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .bottom-item .label {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: .74rem;
+      letter-spacing: .01em;
+      color: rgba(26, 32, 39, .65);
+      white-space: nowrap;
+    }
+
+    .bottom-item:hover .label {
+      color: var(--ink);
+    }
+
+    /* ===== RESPONSIVE ===== */
+
+    @media (min-width: 900px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 900px) {
+      /* 手機和平板：背景填滿上下排列後的整個首頁區塊 */
+      .hero {
+        background-size: cover, cover;
+        background-position: center, center center;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait {
+        max-width: 280px;
+      }
+
+      .record-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-intro {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .recognition-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .recognition-main {
+        grid-column: 1 / -1;
+      }
+
+      .customer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .customer-card:nth-child(1),
+      .customer-card:nth-child(6) {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 520px) {
+      section {
+        padding: 72px 0;
+      }
+
+      .hero {
+        padding: 140px 0 80px;
+      }
+
+      .wrap {
+        padding: 0 20px;
+      }
+
+      .record-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .recognition-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .recognition-main {
+        grid-column: auto;
+      }
+
+      .recognition-main img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .customer-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .customer-card:nth-child(1),
+      .customer-card:nth-child(6) {
+        grid-column: auto;
+      }
+
+      .customer-card img,
+      .customer-card:nth-child(1) img,
+      .customer-card:nth-child(6) img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+      }
+
+      .bottom-brand {
+        display: none;
+      }
+
+      .bottom-bar {
+        justify-content: center;
+        padding: 12px 20px 14px;
+      }
+
+      .bottom-items {
+        gap: 28px;
+      }
+    }
+
+    /* ===== REDUCED MOTION ===== */
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== NAV ===== -->
+
+  <header>
+    <nav class="wrap">
+      <div class="brandmark">
+        <span class="name">Kong Wei Yip</span>
+        <span class="co">FLP REALTY SDN BHD</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#story">Story</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#record">My Journey</a></li>
+        <li><a href="#recognition">Recognition</a></li>
+        <li><a href="#customers">Customers</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+
+    <section class="hero">
+      <div class="blueprint-grid" aria-hidden="true"></div>
+
+      <div class="wrap hero-grid">
+        <div class="portrait">
+          <img
+            src="images/Profile.jpeg"
+            alt="Kong Wei Yip, Real Estate Project Specialist at FLP Realty"
+          >
+        </div>
+
+        <div>
+          <p class="eyebrow">Where Property Meets Strategy</p>
+
+          <h1>
+            Turning property opportunities into
+            <em>smart decisions.</em>
+          </h1>
+
+          <p class="hero-sub">
+            Kong Wei Yip — Real Estate Project Specialist
+            at FLP Realty Sdn Bhd.
+            6 years in the industry, 180+ clients helped,
+            and a 30-person team he trains and leads.
+          </p>
+
+          <p class="hero-quote">
+            "Where property meets strategy."
+          </p>
+
+          <div class="hero-actions">
+            <a
+              class="btn solid"
+              href="https://wa.me/60106660200"
+              target="_blank"
+              rel="noopener"
+            >
+              Chat on WhatsApp
+            </a>
+
+            <a
+              class="btn"
+              href="https://www.instagram.com/weiyipp_____/"
+              target="_blank"
+              rel="noopener"
+            >
+              View IG Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STORY ===== -->
+
+    <section class="story" id="story">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">In His Own Words</p>
+          <h2>I'm Wei Yip.</h2>
+        </div>
+
+        <div class="philosophy reveal">
+          <p>
+            With 6 years of experience in real estate,
+            I have helped 180+ clients find and secure
+            homes that truly fit their needs and goals.
+          </p>
+
+          <p>
+            I specialise in property market analysis,
+            project evaluation and data-driven insights,
+            helping clients understand the numbers and
+            make confident property decisions.
+          </p>
+
+          <blockquote>
+            I don't believe in simply selling a property.<br>
+            I believe in helping people find the right
+            property for them.
+          </blockquote>
+
+          <p>
+            Beyond property sales, I also lead a team of
+            30 young real estate professionals, where I
+            focus on training and developing their knowledge
+            in real estate fundamentals, sales strategies,
+            problem-solving and client management.
+          </p>
+
+          <p class="vision-label">My Vision</p>
+
+          <p class="vision-text">
+            Help more people make the right property
+            decisions, while building a stronger generation
+            of real estate professionals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="services-intro reveal">
+          <div class="namecard">
+            <img
+              src="images/P1.jpeg"
+              alt="Kong Wei Yip name card, FLP Realty Sdn Bhd"
+            >
+          </div>
+
+          <div class="section-head">
+            <p class="eyebrow">Full-Circle Support</p>
+            <h2>Beyond the sale.</h2>
+
+            <p>
+              A property decision doesn't end at signing —
+              Wei Yip works alongside trusted specialists
+              to support clients through financing,
+              ownership, and long-term planning.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-grid reveal">
+          <div class="service-card">
+            <div class="service-photo">
+              <img src="images/S1.png" alt="Loan Consultant">
+            </div>
+
+            <div class="service-body">
+              <span class="tag">01 / FINANCING</span>
+              <h3>Loan Consultant</h3>
+
+              <p>
+                Helps clients understand their financing
+                options and structure a loan that fits
+                their budget and long-term goals.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-photo">
+              <img src="images/S2.png" alt="Property Management">
+            </div>
+
+            <div class="service-body">
+              <span class="tag">02 / OWNERSHIP</span>
+              <h3>Property Management</h3>
+
+              <p>
+                Supports owners and investors after the
+                purchase — from tenancy matters to the
+                day-to-day upkeep of the property.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-photo">
+              <img src="images/S3.png" alt="Financial Planner">
+            </div>
+
+            <div class="service-body">
+              <span class="tag">03 / PLANNING</span>
+              <h3>Financial Planner</h3>
+
+              <p>
+                Helps clients see how each property fits
+                into their bigger financial picture, so the
+                decision holds up in the long run.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRACK RECORD ===== -->
+
+    <section class="record" id="record">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">My Journey</p>
+          <h2>Numbers that back the story.</h2>
+        </div>
+
+        <div class="record-grid reveal">
+          <div class="record-cell">
+            <span class="tag">EXPERIENCE</span>
+            <h3>6 Years</h3>
+
+            <p>
+              Active in real estate —
+              project sales, market analysis,
+              and client consultation.
+            </p>
+          </div>
+
+          <div class="record-cell">
+            <span class="tag">CLIENTS</span>
+            <h3>180+ Clients</h3>
+
+            <p>
+              Helped find and secure homes
+              that truly fit their needs
+              and goals.
+            </p>
+          </div>
+
+          <div class="record-cell">
+            <span class="tag">LEADERSHIP</span>
+            <h3>30-Person Team</h3>
+
+            <p>
+              Leads and trains a team of
+              young real estate professionals
+              as Group District Leader.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RECOGNITION ===== -->
+
+    <section class="recognition" id="recognition">
+      <div class="wrap">
+        <div class="achievement-title">My Achievement</div>
+
+        <div class="recognition-grid">
+          <div class="recognition-main">
+            <img src="images/R1.jpeg" alt="Recognition 1">
+          </div>
+
+          <div class="recognition-card">
+            <img src="images/R2.jpeg" alt="Recognition 2">
+          </div>
+
+          <div class="recognition-card">
+            <img src="images/R3.jpeg" alt="Recognition 3">
+          </div>
+
+          <div class="recognition-card">
+            <img src="images/R4.jpeg" alt="Recognition 4">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CUSTOMERS ===== -->
+
+    <section class="customers" id="customers">
+      <div class="wrap">
+        <div class="customers-head reveal">
+          <p class="eyebrow">Client Stories</p>
+          <h2>Trusted by the people I serve.</h2>
+
+          <p>
+            Every property journey is different.
+            I am grateful to every customer who has
+            trusted me throughout the process —
+            from the first conversation to finding
+            a place they can truly call home.
+          </p>
+        </div>
+
+        <div class="customer-grid reveal">
+          <div class="customer-card">
+            <img
+              src="images/C1.jpeg"
+              alt="Customer 1"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="customer-card">
+            <img
+              src="images/C2.jpeg"
+              alt="Customer 2"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="customer-card">
+            <img
+              src="images/C3.jpeg"
+              alt="Customer 3"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="customer-card">
+            <img
+              src="images/C4.jpeg"
+              alt="Customer 4"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="customer-card">
+            <img
+              src="images/C5.jpeg"
+              alt="Customer 5"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="customer-card">
+            <img
+              src="images/C6.jpeg"
+              alt="Customer 6"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="customer-card">
+            <img
+              src="images/C7.jpeg"
+              alt="Customer 7"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="customer-card">
+            <img
+              src="images/C8.jpeg"
+              alt="Customer 8"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="customer-card">
+            <img
+              src="images/C9.jpeg"
+              alt="Customer 9"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="customer-card">
+            <img
+              src="images/C10.jpeg"
+              alt="Customer 10"
+              loading="lazy"
+            >
+          </div>
+        </div>
+
+        <p class="customer-note">
+          "Thank you for every trust, every referral,
+          and every opportunity to be part of your
+          property journey."
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+
+  <footer class="wrap">
+    <span>
+      © <span id="year"></span>
+      FLP Realty Sdn Bhd · Kong Wei Yip
+    </span>
+
+    <span>Where Property Meets Strategy</span>
+  </footer>
+
+  <!-- ===== BOTTOM BAR ===== -->
+
+  <div class="bottom-bar">
+    <span class="bottom-brand">FLP Realty Sdn Bhd</span>
+
+    <div class="bottom-items">
+      <a
+        class="bottom-item"
+        href="https://wa.me/60106660200"
+        target="_blank"
+        rel="noopener"
+        aria-label="WhatsApp"
+      >
+        <span class="icon-btn">
+          <img src="images/WA.png" alt="">
+        </span>
+
+        <span class="label">WhatsApp</span>
+      </a>
+
+      <a
+        class="bottom-item"
+        href="tel:+60106660200"
+        aria-label="Call"
+      >
+        <span class="icon-btn">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            width="20"
+            height="20"
+          >
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 0 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </span>
+
+        <span class="label">010-666 0200</span>
+      </a>
+
+      <a
+        class="bottom-item"
+        href="https://www.instagram.com/weiyipp_____/"
+        target="_blank"
+        rel="noopener"
+        aria-label="Instagram"
+      >
+        <span class="icon-btn">
+          <img src="images/IG.png" alt="">
+        </span>
+
+        <span class="label">@weiyipp_____</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== JAVASCRIPT ===== -->
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    const revealEls = document.querySelectorAll(".reveal");
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+    revealEls.forEach((el) => io.observe(el));
+  </script>
 </body>
 </html>
